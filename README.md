@@ -1,2 +1,2 @@
-# Snowpark Python for Data Engineering
-Snowpark Python for Data Engineering, published by Packt
+# Definitive Guide to Snowpark
+Definitive Guide to Snowpark, published by Packt
