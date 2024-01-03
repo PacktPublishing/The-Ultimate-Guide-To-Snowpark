@@ -1,0 +1,6 @@
+[default]
+account = <your account id> ex: PCB29551
+user = <your user name> ex: prestonb
+password = <your password> ex: trial1
+role = accountadmin
+warehouse = compute_wh
