@@ -1,0 +1,7 @@
+conda create -n snowpark_env python=3.8 
+conda activate snowpark_env
+pip install "snowflake-snowpark-python[pandas]"
+pip install jupyterlab
+python -m jupyterlab
+
+#( select snowpark_env kernel )
