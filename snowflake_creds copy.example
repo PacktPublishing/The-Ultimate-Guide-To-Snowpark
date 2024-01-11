@@ -1,0 +1,6 @@
+[default]
+account = PCB29551
+user = prestonb
+password = ********
+role = accountadmin
+warehouse = compute_wh
