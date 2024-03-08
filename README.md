@@ -11,6 +11,8 @@ This Repository has the codes and datasets used in the book. It is organized cha
 | Establishing Foundation with Snowpark             | chapter_2    | chapter_2.ipynb                  |
 | Simplifying Data Processing Through Snowpark      | chapter_3    | <p> chapter_3_data_load.ipynb </p> <p> chapter_3_explore_transform.ipynb </p>  <p> chapter_3_agg_analysis.ipynb </p>  | 
 | Building Data Engineering Pipelines with Snowpark | chapter_4    | chapter_4.ipynb                  |
+| Developing Data Science Projects with Snowpark | chapter_5    | chapter_5.ipynb                  |
+| Deploying and Managing ML Models with Snowpark | chapter_6    | <p> chapter_6_model_register_deployment.ipynb     </p>    <p> chapter_6_feature_store.ipynb     </p>          |
 
 ## Author Bio
 ### Shankar Narayanan SGS
