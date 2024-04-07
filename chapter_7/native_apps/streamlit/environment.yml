@@ -1,0 +1,9 @@
+name: sf_env
+channels:
+- snowflake
+dependencies:
+- matplotlib
+- seaborn
+- scipy
+- snowflake-ml-python
+- plotly
