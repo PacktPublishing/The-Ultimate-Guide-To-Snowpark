@@ -1,14 +1,9 @@
 name: notebook-tests
 
-# on:
-#   pull_request:
-#     branches:
-#       - main
-
 on:
-  push:
+  pull_request:
     branches:
-      - chapter_2_auto
+      - main
 
 jobs:
   build:
@@ -22,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Setup notebook tests for python ${{matrix.python-version}}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{matrix.python-version}}
 
@@ -31,7 +26,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Notebook tests
+    - name: Chapter 2 notebook tests
       env:
         SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
         SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER}}
