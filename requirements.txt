@@ -1,0 +1,10 @@
+pandas
+numpy
+snowflake-snowpark-python[pandas]
+seaborn
+matplotlib
+jupyter
+nbconvert
+jinja2==3.0.3
+
+
