@@ -1,0 +1,39 @@
+name: notebook-tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup notebook tests for python ${{matrix.python-version}}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{matrix.python-version}}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Chapter 2 notebook tests
+      env:
+        SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+        SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER}}
+        SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT}}
+        SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE}}
+        SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE}}
+        SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE}}
+        SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA}}
+      run: |
+        jupyter nbconvert --execute --to python chapter_2/chapter_2.ipynb --stdout
