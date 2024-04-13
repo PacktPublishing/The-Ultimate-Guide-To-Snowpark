@@ -86,7 +86,7 @@ def display_outlier_analysis(dataframe):
     fig.set_size_inches(12, 10)
     sn.boxplot(data=dataframe, y="COUNT", orient="v", ax=axes[0][0])
     sn.boxplot(data=dataframe, y="COUNT", x="SEASON", orient="v", ax=axes[0][1])
-    sn.boxplot(data=dataframe, y="COUNT", x="HOUR", orient="v", ax=axes[1][0])
+    sn.boxplot(data=dataframe, y="COUNT", x='"HOUR"', orient="v", ax=axes[1][0])
     sn.boxplot(data=dataframe, y="COUNT", x="WORKINGDAY", orient="v", ax=axes[1][1])
     axes[0][0].set(ylabel='Count', title="Box Plot On Count")
     axes[0][1].set(xlabel='Season', ylabel='Count', title="Box Plot On Count Across Season")
@@ -155,15 +155,13 @@ def display_time_period_analysis(dataframe):
 
 def eda():
     st.subheader('Exploratory Data Analysis')
-    dataframe = session.table("SNOWPARK.TUTORIAL.BSD_TRAIN")
+    dataframe = session.table("SNOWPARK_DEFINITIVE_GUIDE.MY_SCHEMA.BSD_TRAIN")
     pandas_df = dataframe.to_pandas()
     display_shape(dataframe)
     display_data_type_with_count(pandas_df)
     display_count_of_columns(pandas_df)
-    display_outlier_analysis(pandas_df)
     display_correlation_analysis(pandas_df)
     display_data_distribution(pandas_df)
-    display_time_period_analysis(pandas_df)
 
 
 def remove_outliers(dataframe):
@@ -180,10 +178,10 @@ def fill_windspeed(dataframe):
 
 
 def perform_feature_engineering(operation_list):
-    dataframe = session.table("SNOWPARK.TUTORIAL.BSD_TRAIN")
+    dataframe = session.table("SNOWPARK_DEFINITIVE_GUIDE.MY_SCHEMA.BSD_TRAIN")
     for operation in operation_list:
         if operation == "Extract Hour":
-            dataframe = dataframe.with_column("hour", hour("DATETIME"))
+            dataframe = dataframe.with_column('"hour"', hour("DATETIME"))
         elif operation == "Extract Month":
             dataframe = dataframe.with_column("month", month("DATETIME"))
         elif operation == "Extract Date":
@@ -196,11 +194,12 @@ def perform_feature_engineering(operation_list):
             dataframe = remove_outliers(dataframe)
         elif operation == "Fill Zero Wind Speed":
             dataframe = fill_windspeed(dataframe)
-    dataframe.write.mode("overwrite").save_as_table("SNOWPARK.TUTORIAL.BSD_TRAIN")
+    dataframe.write.mode("overwrite").save_as_table("SNOWPARK_DEFINITIVE_GUIDE.MY_SCHEMA.BSD_TRAIN_OUTPUT")
 
 
 def feature_engineering():
     st.subheader("Feature Engineering")
+    st.markdown(""" All Feature Engineering Steps Should Be Carried Out- To Run Model""")
     st.markdown(""" #### Date Operations""")
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -264,54 +263,6 @@ def linear_regression(train_df, test_df, feature_list, label_column, output_colu
     return get_model_metrics(result, "COUNT", "PREDICTED_COUNT")
 
 
-def ridge(train_df, test_df, feature_list, label_column, output_columns, placeholder):
-    grid_search = GridSearchCV(
-        estimator=Ridge(),
-        param_grid={'max_iter': [3000], 'alpha': [0.1, 1, 2, 3, 4, 10, 30, 100, 200, 300, 400, 800, 900, 1000]},
-        n_jobs=-1,
-        scoring="neg_root_mean_squared_error",
-        input_cols=feature_list,
-        label_cols=label_column,
-        output_cols=output_columns
-    )
-    grid_search.fit(train_df)
-    result = grid_search.predict(test_df)
-    placeholder.dataframe(result)
-    return get_model_metrics(result, "COUNT", "PREDICTED_COUNT")
-
-
-def lasso(train_df, test_df, feature_list, label_column, output_columns, placeholder):
-    alpha = 1 / np.array([0.1, 1, 2, 3, 4, 10, 30, 100, 200, 300, 400, 800, 900, 1000])
-    lasso_params_ = {'max_iter': [3000], 'alpha': alpha}
-
-    grid_search = GridSearchCV(
-        estimator=Lasso(),
-        param_grid=lasso_params_,
-        n_jobs=-1,
-        scoring="neg_root_mean_squared_error",
-        input_cols=feature_list,
-        label_cols=label_column,
-        output_cols=output_columns
-    )
-    grid_search.fit(train_df)
-    result = grid_search.predict(test_df)
-    placeholder.dataframe(result)
-    return get_model_metrics(result, "COUNT", "PREDICTED_COUNT")
-
-
-def random_forest_regressor(train_df, test_df, feature_list, label_column, output_columns, placeholder):
-    regressor = RandomForestRegressor(
-        input_cols=feature_list,
-        label_cols=label_column,
-        output_cols=output_columns,
-        n_estimators=100
-    )
-    regressor.fit(train_df)
-    result = regressor.predict(test_df)
-    placeholder.dataframe(result)
-    return get_model_metrics(result, "COUNT", "PREDICTED_COUNT")
-
-
 def gradient_boost_regressor(train_df, test_df, feature_list, label_column, output_columns, placeholder):
     regressor = GradientBoostingRegressor(
         input_cols=feature_list,
@@ -328,7 +279,7 @@ def gradient_boost_regressor(train_df, test_df, feature_list, label_column, outp
 
 def train_model(models, placeholder):
     metrics = []
-    dataframe = session.table("SNOWPARK.TUTORIAL.BSD_TRAIN")
+    dataframe = session.table("SNOWPARK_DEFINITIVE_GUIDE.MY_SCHEMA.BSD_TRAIN_OUTPUT")
     train_df, test_df = dataframe.random_split(weights=[0.7, 0.3], seed=0)
     my_bar = st.progress(0, text="progress_text")
     total_models = len(models) + 1
@@ -358,7 +309,7 @@ def model_building():
 
     options = st.multiselect(
         'Choose the model to train',
-        ['Linear Regression', 'Ridge', 'Lasso', 'Random Forest Regressor', 'Gradient Boosting Regressor'])
+        ['Linear Regression', 'Gradient Boosting Regressor'])
     placeholder = st.empty()
 
     def click_button():
@@ -372,13 +323,7 @@ def model_building():
 
     st.button("Train Model", type="primary", on_click=click_button)
 
-    model_deploy_options = st.multiselect(
-        'Choose the model to deploy',
-        options
-    )
     
-def prediction():
-    st.subheader("Prediction")
 
 # Display header
 st.header("Bike Ride Share")
@@ -386,10 +331,9 @@ st.header("Bike Ride Share")
 # Create sidebar and load the first page
 page_names_to_funcs = {
     "About Dataset": dataset,
-    "EDA": eda,
     "Feature Engineering": feature_engineering,
-    "Model": model_building,
-    "Prediction": prediction
+    "EDA": eda,
+    "Model Building": model_building
 }
 selected_page = st.sidebar.selectbox("Select", page_names_to_funcs.keys())
 page_names_to_funcs[selected_page]()

@@ -6,9 +6,12 @@ The chapter folder focuses on code components to build native Apps using Streaml
 
 | File or Folder Name         |  Topics Covered                   |
 | ----------------------------|  -------------------------------- |
-| streamlit/streamlit_bike_share_analysis.py    |<p>Dataset Description </p><p> Exploratory Data Analysis </p><p> Feature Engineering </p> <p> Deploying Model Development </p> <p> Model Prediction </p>|
-| scripts/setup.sql           |  <p> Setup script for the Bike Share Streamlit application   </p> |
+| chapter_7.sql         |  <p> SQL code to setup Native Apps Package and Permission   </p> |
+| native_apps/streamlit/streamlit_bike_share_analysis.py    |<p> Streamlit Code for Snowflake Native Apps </p>|
+| native_apps/scripts/setup.sql           |  <p> Setup script for the Bike Share Streamlit application   </p> |
 | manifest.yml           |  <p> YAML includes native apps configuration details   </p> |
+| streamlit_bike_share_analysis.py          |  <p> Streamlit Code for Snowflake Streamlit   </p> |
+| chapter_7_data_load.ipynb          |  <p> Loads Bike Sharing Dataset as Table In Snowflake   </p> |
 
 
 ## Datasets
