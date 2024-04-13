@@ -47,7 +47,7 @@ def get_connection_params():
             "host": SNOWFLAKE_HOST,
             "authenticator": "oauth",
             "token": get_login_token(),
-            "warehouse": "TUTORIAL_WAREHOUSE",
+            "warehouse": "COMPUTE_WH",
             "database": SNOWFLAKE_DATABASE,
             "schema": SNOWFLAKE_SCHEMA
         }
@@ -58,7 +58,7 @@ def get_connection_params():
             "user": SNOWFLAKE_USER,
             "password": SNOWFLAKE_PASSWORD,
             "role": SNOWFLAKE_ROLE,
-            "warehouse": "TUTORIAL_WAREHOUSE",
+            "warehouse": "COMPUTE_WH",
             "database": SNOWFLAKE_DATABASE,
             "schema": SNOWFLAKE_SCHEMA
         }
@@ -76,7 +76,7 @@ def get_logger(logger_name):
     return logger
 
 
-logger = get_logger('echo-service')
+logger = get_logger('filter-service')
 
 app = Flask(__name__)
 
@@ -119,41 +119,6 @@ def udf_calling_function():
     except Exception as e:
         logger.error(e)
         return json.dumps({"data": []})
-
-
-
-@app.post("/echo")
-def echo():
-    '''
-    Main handler for input data sent by Snowflake.
-    '''
-    message = request.json
-    logger.debug(f'Received request: {message}')
-
-    if message is None or not message['data']:
-        logger.info('Received empty message')
-        return {}
-
-    # input format:
-    #   {"data": [
-    #     [row_index, column_1_value, column_2_value, ...],
-    #     ...
-    #   ]}
-    input_rows = message['data']
-    logger.info(f'Received {len(input_rows)} rows')
-
-    # output format:
-    #   {"data": [
-    #     [row_index, column_1_value, column_2_value, ...}],
-    #     ...
-    #   ]}
-    output_rows = [[row[0], get_echo_response(row[1])] for row in input_rows]
-    logger.info(f'Produced {len(output_rows)} rows')
-
-    response = make_response({"data": output_rows})
-    response.headers['Content-type'] = 'application/json'
-    logger.debug(f'Sending response: {response.json}')
-    return response
 
 
 @app.route("/ui", methods=["GET", "POST"])

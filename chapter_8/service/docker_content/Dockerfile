@@ -5,4 +5,4 @@ COPY templates/ ./templates/
 RUN pip install --upgrade pip && \
     pip install flask && \
     pip install snowflake-snowpark-python[pandas]
-CMD ["python3", "echo_service.py"]
+CMD ["python3", "filter_service.py"]

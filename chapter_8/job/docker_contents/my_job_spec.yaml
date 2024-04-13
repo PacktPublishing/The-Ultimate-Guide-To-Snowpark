@@ -1,9 +1,9 @@
 spec:
   container:
   - name: main
-    image: /snowpark_definitive_guide/my_schema/snowpark_cs_repository/test_job:latest
+    image: /snowpark_definitive_guide/my_schema/snowpark_cs_repository/my_job_image:latest
     env:
-      SNOWFLAKE_WAREHOUSE: tutorial_warehouse
+      SNOWFLAKE_WAREHOUSE: compute_wh
     args:
     - "--table=NEWS_CATEGORY"
     - "--date_column=DATE"

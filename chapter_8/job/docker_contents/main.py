@@ -66,7 +66,7 @@ def get_connection_params():
             "host": SNOWFLAKE_HOST,
             "authenticator": "oauth",
             "token": get_login_token(),
-            "warehouse": SNOWFLAKE_WAREHOUSE,
+            "warehouse": "COMPUTE_WH",
             "database": SNOWFLAKE_DATABASE,
             "schema": SNOWFLAKE_SCHEMA
         }
@@ -77,7 +77,7 @@ def get_connection_params():
             "user": SNOWFLAKE_USER,
             "password": SNOWFLAKE_PASSWORD,
             "role": SNOWFLAKE_ROLE,
-            "warehouse": SNOWFLAKE_WAREHOUSE,
+            "warehouse": "COMPUTE_WH",
             "database": SNOWFLAKE_DATABASE,
             "schema": SNOWFLAKE_SCHEMA
         }
