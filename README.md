@@ -16,6 +16,7 @@ This Repository has the codes and datasets used in the book. It is organized cha
 | Developing Data Science Projects with Snowpark | chapter_5    | chapter_5.ipynb                  |
 | Deploying and Managing ML Models with Snowpark | chapter_6    | <p> chapter_6_model_register_deployment.ipynb     </p>    <p> chapter_6_feature_store.ipynb     </p>          |
 | Developing Native Application With Snowpark | chapter_7 | <p> chapter_7.sql </p> <p> streamlit_bike_share_analysis.py </p> |
+| Introduction To Snowpark Container Services | chapter_8 | chapter_8.ipynb </p> |
 
 ## Author Bio
 ### Shankar Narayanan SGS
