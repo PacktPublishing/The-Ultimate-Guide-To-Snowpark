@@ -10,7 +10,7 @@ Within this chapter, you'll find three IPython notebooks, each dedicated to dist
 | ----------------------------|  -------------------------------- |
 | Chapter_3_data_load.ipynb   |<p>Loading CSV </p><p>Loading JSON</p><p> Loading Parquet </p> <p> Loading Images </p> <p> Dynamically Reading Multiple Files </p>|
 | Chapter_3_explore_transform.ipynb|  <p> Reading In Tables </p> <p> Count Vs Collect </p>  <p> Dataset Filtering & Subsetting </p>  <p> Joins & Unions </p> |
-| Chapter_3_agg_analysis.ipynb |  <p> Data Description </p> <p> Pivoting & Crosstabs </p>  <p> Dealing with Duplicate & Missing Values </p>  <p> Correlation & Covariance </p> <p> Sampling </p> <p> Charting </p>|  
+| Chapter_3_grouping_analysis.ipynb |  <p> Data Grouping and  </p> <p> Pivoting & Crosstabs </p>  <p> Dealing with Duplicate & Missing Values </p>  <p> Correlation & Covariance </p> <p> Sampling </p> <p> Charting </p>|  
 
 ## Datasets
 

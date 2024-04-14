@@ -1,6 +1,8 @@
-# Definitive Guide To Snowpark
-#### Designing, Developing and Deploying Snowpark using Python
-Master Snowpark in Snowflake using Python. This is a comprehensive guide that covers the fundamentals and advanced features of the powerful Snowpark framework in Python. From Beginners to Pro, this book equips Snowflake Developers to effectively use Snowpark for Data Engineering, Data Science and Data Application workloads through practical examples and best practices.
+# The Ultimate Guide To Snowpark
+#### Design and deploy Snowpark with Python for efficient data workloads
+The Ultimate Guide to Snowpark helps you develop an understanding of Snowpark and how it brings together various workloads like data engineering, data science, and data applications within the Data Cloud.
+
+From configuration to coding styles and workloads like data manipulation, collection, preparation, transformation, aggregation, and analysis, this guide will equip you with the right knowledge to make the most of this framework. You'll discover how to build, test, and deploy data pipelines and data science models. As you progress, you’ll deploy data applications natively in Snowflake and operate with LLMs using Snowpark container services. 
 
 ## Contents
 
@@ -13,6 +15,8 @@ This Repository has the codes and datasets used in the book. It is organized cha
 | Building Data Engineering Pipelines with Snowpark | chapter_4    | chapter_4.ipynb                  |
 | Developing Data Science Projects with Snowpark | chapter_5    | chapter_5.ipynb                  |
 | Deploying and Managing ML Models with Snowpark | chapter_6    | <p> chapter_6_model_register_deployment.ipynb     </p>    <p> chapter_6_feature_store.ipynb     </p>          |
+| Developing Native Application With Snowpark | chapter_7 | <p> chapter_7.sql </p> <p> streamlit_bike_share_analysis.py </p> |
+| Introduction To Snowpark Container Services | chapter_8 | chapter_8.ipynb </p> |
 
 ## Author Bio
 ### Shankar Narayanan SGS
@@ -30,9 +34,8 @@ He is an academist and holds a bachelor's degree in Industries engineering from 
 
 He is ranked globally at the Top 1 percentile in Kaggle for his solution and he is also a Data Science guest faculty and advisor for various educational institutes
 
-## Contact
- <Provide Contact Information and Website>
-
+## Website
+You can purchase the book and find other information about the book at [www.ultimateguidesnowpark.com](www.ultimateguidesnowpark.com)
 
 ## Disclaimer
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES # OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS, PUBLISHERS OR COPYRIGHT HOLDERS BE # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
