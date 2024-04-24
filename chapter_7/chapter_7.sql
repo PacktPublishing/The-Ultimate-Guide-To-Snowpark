@@ -22,7 +22,7 @@ LIST @snowflake_native_apps_package.MY_SCHEMA.my_stage;
 CREATE APPLICATION bike_share_native_app FROM APPLICATION PACKAGE snowflake_native_apps_package USING '@snowflake_native_apps_package.my_schema.my_stage'; 
 
 
--- CREATE VIEW ON BIKE SHARE DEMAND TABLE
+-- CREATE VIEW ON BSD_TRAIN TABLE
 
 CREATE SCHEMA IF NOT EXISTS shared_data;
 
@@ -40,6 +40,10 @@ GRANT USAGE ON SCHEMA snowflake_native_apps_package.shared_data
 GRANT SELECT ON VIEW snowflake_native_apps_package.shared_data.BSD_TRAIN
   TO SHARE IN APPLICATION PACKAGE snowflake_native_apps_package;
 
+
+-- ADD VERSION
+
+ALTER APPLICATION PACKAGE snowflake_native_apps_package ADD VERSION v1_0 USING '@ snowflake_native_apps_package.my_schema.my_stage'; 
 
 
 
