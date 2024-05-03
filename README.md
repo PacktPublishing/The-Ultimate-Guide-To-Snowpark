@@ -28,11 +28,9 @@ He holds a bachelor's and master’s degree in Computer science and holds many c
 For his technical contribution to the community, He has been selected as SAP Community Topic leader by SAP and is selected as one of the 72 Snowflake Data Heroes by Snowflake.
 
 ### Vivekanandan Srinivasan
-Vivekeanandan aka Vivek is a Data Specialist with a decade of experience in Data Science and Big Data. He has worked on complex projects in data mining and analysis across various domains and is proficient in cloud analytics and cloud data warehouses.
+Vivekanandan aka Vivek spearheads the GenAI enablement team at Verizon, leveraging over a decade of expertise in Data Science and Big Data. His professional journey spans across building analytics solutions and products across diverse domains, and proficient in cloud analytics and data warehouses.
 
-He is an academist and holds a bachelor's degree in Industries engineering from Anna University, a master's degree in Data Science and analytics from IIM, Bangalore, and a master's degree in Data Science from Eastern University. He is a Certified SAFe Product manager and practitioner.
-
-He is ranked globally at the Top 1 percentile in Kaggle for his solution and he is also a Data Science guest faculty and advisor for various educational institutes
+He holds  a bachelor's degree in Industrial engineering from Anna University, a long distance program in Big Data analytics from IIM, Bangalore, and a master's in Data Science from Eastern University. As a seasoned trainer, he imparts his knowledge, specializing in Snowflake and GenAI, also a data science guest faculty and advisor for various educational institutes. His solution is ranked in the top 1 percentile in Kaggle Kernels globally.
 
 ## Website
 You can purchase the book and find other information about the book at [www.ultimateguidesnowpark.com](www.ultimateguidesnowpark.com)
