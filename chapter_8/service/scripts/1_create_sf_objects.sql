@@ -21,7 +21,7 @@ CREATE COMPUTE POOL snowpark_cs_compute_pool
 GRANT USAGE, MONITOR ON COMPUTE POOL snowpark_cs_compute_pool TO ROLE test_role;
 
 
-GRANT ROLE test_role TO USER [user_name];
+GRANT ROLE test_role TO USER <user_name>;
 
 
 USE ROLE test_role;

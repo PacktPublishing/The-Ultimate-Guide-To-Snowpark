@@ -8,5 +8,7 @@ nbconvert
 jinja2==3.0.3
 pillow
 snowflake-ml-python
+snowflake-core
+transformers
 
 
