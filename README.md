@@ -28,7 +28,6 @@ The code will look like the following:
 current_runs = dag_op.get_current_dag_runs(dag)
 for r in current_runs:
     print(f"RunId={r.run_id} State={r.state}")
-
 ```
 
 **Following is what you need for this book:**
