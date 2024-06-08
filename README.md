@@ -61,7 +61,7 @@ This Repository has the codes and datasets used in the book. It is organized cha
 
 * Data Engineering with dbt [[Packt]](https://www.packtpub.com/product/data-engineering-with-dbt/9781803246284) [[Amazon]](https://www.amazon.com/Data-Engineering-dbt-cloud-based-dependable/dp/1803246286/ref=sr_1_1?crid=1F0LHDFCCBRJL&dib=eyJ2IjoiMSJ9.ymZC7by8vDEUpw0oRZFLQcyStOmg01OBTbtPF9R5ZVWT-ALxqYzswC4EWfERwbmCn8V9K97eUyJMOgB_PhAl_ABqumD-DmiN4SWMbwV_UojbjbBYN0w0iudf1dSKR4DRnqRNButCDHh2kg56xzGhD1poW9v9mUIgpbMfbg4OVvkNhdswDBRF1XIk5NfGyqtl1tDl73gvA4aKL5AoJOmJLPagw2vtd4l_2NGs-LYg5uA.freQ1IXBYj9w1QnYBfimu5lTB9bfytnUsT44pGHhgJg&dib_tag=se&keywords=Data+Engineering+with+dbt&qid=1716614036&sprefix=data+engineering+with+dbt%2Caps%2C424&sr=8-1)
 
-## Get to Know the Author
+## Get to Know the Authors
 **Shankar Narayanan SGS**
 is a Technical Architect with over a decade of diverse experience leading and delivering large-scale Data and Cloud implementations for Fortune 500 companies across various industries. He has successfully implemented Snowflake Data Cloud for many organizations leading the customers to adopt Snowflake.
 He holds a bachelor's and master&rsquo;s degree in Computer science and holds many certifications in multi-cloud platforms and Snowflake. He is an award-winning blogger and actively contributes to various technical publications and open-source projects.
